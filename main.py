@@ -34,4 +34,4 @@ with st.form("my_form"):
                               })
     submit = st.form_submit_button(label = 'Submit Pick')
     if submit:
-        st.session_state.df = edited_df
+        st.write("Edited df:", edited_df)
