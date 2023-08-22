@@ -4,7 +4,6 @@ st.header("2023 NFL Survivor Pool")
 st.subheader("Please use this page to input your survivor pick week by week")
 nfl_teams = ['Arizona Cardinals','Atlanta Falcons','Baltimore Ravens','Buffalo Bills','Carolina Panthers','Chicago Bears','Cincinnati Bengals','Cleveland Browns','Dallas Cowboys','Denver Broncos','Detroit Lions','Green Bay Packers','Houston Texans','Indianapolis Colts','Jacksonville Jaguars','Kansas City Chiefs','Las Vegas Raiders','Los Angeles Chargers','Los Angeles Rams','Miami Dolphins','Minnesota Vikings','New England Patriots','New Orleans Saints','New York Giants','New York Jets','Philadelphia Eagles','Pittsburgh Steelers','San Francisco 49ers','Seattle Seahawks','Tampa Bay Buccaneers','Tennessee Titans','Washington Commanders']
 @st.cache_data(ttl=600)
-st.session_state
 def load_data(sheets_url):
     csv_url = sheets_url.replace("/edit#gid=", "/export?format=csv&gid=")
     return pd.read_csv(csv_url)
@@ -32,5 +31,3 @@ with st.form("my_form"):
                               "Week 16": st.column_config.SelectboxColumn("Week 16", options = nfl_teams),
                               "Week 17": st.column_config.SelectboxColumn("Week 17", options = nfl_teams)
                               })
-    if submit:
-        st.write(st.session_state)
