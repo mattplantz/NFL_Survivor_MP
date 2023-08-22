@@ -29,5 +29,5 @@ with st.form("my_form"):
                                ,'Week 14': 'TextColumn'
                                ,'Week 15': 'TextColumn'
                                ,'Week 16': 'TextColumn'
-                               ,'Week 17': 'TextColumn')
+                               ,'Week 17': 'TextColumn'})
     submit = st.form_submit_button(label = 'Submit Pick')
