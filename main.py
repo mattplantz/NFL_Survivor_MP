@@ -32,6 +32,6 @@ with st.form("my_form"):
                               "Week 16": st.column_config.SelectboxColumn("Week 16", options = nfl_teams),
                               "Week 17": st.column_config.SelectboxColumn("Week 17", options = nfl_teams)
                               })
-        submit = st.form_submit_button(label = 'Submit Pick')
+    submit = st.form_submit_button(label = 'Submit Pick')
     if submit:
         st.session_state.df = edited_df
