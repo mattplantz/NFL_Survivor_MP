@@ -31,3 +31,5 @@ with st.form("my_form"):
                                ,'Week 16': 'TextColumn'
                                ,'Week 17': 'TextColumn'})
     submit = st.form_submit_button(label = 'Submit Pick')
+if submit:
+    st.write(edited_df)
