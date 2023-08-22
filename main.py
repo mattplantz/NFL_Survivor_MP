@@ -12,26 +12,7 @@ with st.form("my_form"):
     df = load_data(st.secrets["public_gsheets_url"])
     if 'df' not in st.session_state:
         st.session_state.df = df
-    edited_df = st.data_editor(df,
-                              column_config = {
-                              "Week 1": st.column_config.SelectboxColumn("Week 1", options = nfl_teams),
-                              "Week 2": st.column_config.SelectboxColumn("Week 2", options = nfl_teams),
-                              "Week 3": st.column_config.SelectboxColumn("Week 3", options = nfl_teams),
-                              "Week 4": st.column_config.SelectboxColumn("Week 4", options = nfl_teams),
-                              "Week 5": st.column_config.SelectboxColumn("Week 5", options = nfl_teams),
-                              "Week 6": st.column_config.SelectboxColumn("Week 6", options = nfl_teams),
-                              "Week 7": st.column_config.SelectboxColumn("Week 7", options = nfl_teams),
-                              "Week 8": st.column_config.SelectboxColumn("Week 8", options = nfl_teams),
-                              "Week 9": st.column_config.SelectboxColumn("Week 9", options = nfl_teams),
-                              "Week 10": st.column_config.SelectboxColumn("Week 10", options = nfl_teams),
-                              "Week 11": st.column_config.SelectboxColumn("Week 11", options = nfl_teams),
-                              "Week 12": st.column_config.SelectboxColumn("Week 12", options = nfl_teams),
-                              "Week 13": st.column_config.SelectboxColumn("Week 13", options = nfl_teams),
-                              "Week 14": st.column_config.SelectboxColumn("Week 14", options = nfl_teams),
-                              "Week 15": st.column_config.SelectboxColumn("Week 15", options = nfl_teams),
-                              "Week 16": st.column_config.SelectboxColumn("Week 16", options = nfl_teams),
-                              "Week 17": st.column_config.SelectboxColumn("Week 17", options = nfl_teams)
-                              })
+    edited_df = st.data_editor(df)
     submit = st.form_submit_button(label = 'Submit Pick')
     if submit:
         st.write("Edited df:", edited_df)
