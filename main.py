@@ -9,7 +9,6 @@ def load_data(sheets_url):
     return pd.read_csv(csv_url)
 
 with st.form("my_form"):
-    submit = st.form_submit_button(label = 'Submit Pick')
     df = load_data(st.secrets["public_gsheets_url"])
     if 'df' not in st.session_state:
         st.session_state.df = df
@@ -33,5 +32,6 @@ with st.form("my_form"):
                               "Week 16": st.column_config.SelectboxColumn("Week 16", options = nfl_teams),
                               "Week 17": st.column_config.SelectboxColumn("Week 17", options = nfl_teams)
                               })
+        submit = st.form_submit_button(label = 'Submit Pick')
     if submit:
         st.session_state.df = edited_df
