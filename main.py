@@ -7,5 +7,3 @@ def load_data(sheets_url):
     return pd.read_csv(csv_url)
 
 df = load_data(st.secrets["public_gsheets_url"])
-
-edited_df = st.data_editor(df)
